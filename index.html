@@ -951,10 +951,14 @@
         /* ═══ COMPRAR ═══ */
         function buyNow() {
             const size = document.querySelector('.sz.active')?.textContent || 'M';
-            // 👇 Descomentá y reemplazá con tu número para activar WhatsApp:
-            window.open('https://wa.me/573217597054?text=Quiero el Shadow Entity Hoodie talla ' + size);
-            alert('Talla ' + size + ' seleccionada.\nContactanos por WhatsApp para confirmar tu pedido.');
+            window.open(
+                'https://wa.me/573217597054?text=Hola! Quiero reservar mi *Shadow Entity Hoodie — Edición Limitada* en talla *'
+                + size +
+                '*. ¿Cuáles son los métodos de pago y el tiempo de entrega?'
+            );
         }
+
+
 
         /* ═══ FAVORITOS ═══ */
         function toggleWish() {
