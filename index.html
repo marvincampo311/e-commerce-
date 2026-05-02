@@ -31,7 +31,7 @@
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
         }
 
-        /* ──────────── HERO ──────────── */
+        /* HERO */
         .hero {
             position: relative;
             min-height: 100vh;
@@ -100,17 +100,35 @@
             z-index: 1;
         }
 
-        /* ──────────── CARRUSEL CINEMATOGRÁFICO ──────────── */
-        /*
-   * CÓMO AGREGAR FOTOS:
-   * 1. Guardá tus imágenes en la misma carpeta que este archivo
-   * 2. Buscá el comentario "== IMÁGENES DEL CATÁLOGO ==" más abajo
-   * 3. Agregá un <div class="cslide"> por cada foto nueva
-   * Ejemplo:
-   *   <div class="cslide"><img src="foto2.jpg" alt="Vista 2"></div>
-   *   <div class="cslide"><img src="foto3.jpg" alt="Vista 3"></div>
-   *)
-   */
+        /* PROMO BANNER */
+        .promo-banner {
+            background: linear-gradient(135deg, #1a1a1a 0%, #111 100%);
+            border-top: 1px solid #2a2a2a;
+            border-bottom: 1px solid #2a2a2a;
+            padding: 14px 20px;
+            text-align: center;
+        }
+
+        .promo-banner .promo-main {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.6rem;
+            letter-spacing: 0.08em;
+            color: #fff;
+        }
+
+        .promo-banner .promo-main span {
+            color: #c8a96e;
+        }
+
+        .promo-banner .promo-sub {
+            font-size: 11px;
+            letter-spacing: 0.15em;
+            color: #555;
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+
+        /* CARRUSEL */
         .carousel-outer {
             position: relative;
             background: #000;
@@ -118,7 +136,6 @@
             overflow: hidden;
         }
 
-        /* pista que mueve las slides */
         .ctrack {
             display: flex;
             align-items: center;
@@ -126,7 +143,6 @@
             will-change: transform;
         }
 
-        /* cada slide */
         .cslide {
             flex-shrink: 0;
             width: 72vw;
@@ -135,26 +151,23 @@
             border-radius: 4px;
             overflow: hidden;
             transition: filter 0.55s ease, transform 0.55s ease, opacity 0.55s ease;
-            /* vecinos borrosos por defecto */
-            filter: blur(6px) brightness(0.45);
+            filter: blur(6px) brightness(0.4);
             transform: scale(0.88);
-            opacity: 0.6;
+            opacity: 0.55;
             cursor: pointer;
         }
 
-        /* slide activo */
         .cslide.active {
-            filter: blur(0px) brightness(1);
+            filter: blur(0) brightness(1);
             transform: scale(1);
             opacity: 1;
             cursor: default;
         }
 
-        /* slide inmediatamente adyacente — menos blur */
         .cslide.near {
-            filter: blur(3px) brightness(0.6);
+            filter: blur(3px) brightness(0.55);
             transform: scale(0.92);
-            opacity: 0.75;
+            opacity: 0.7;
         }
 
         .cslide img {
@@ -166,7 +179,6 @@
             background: #070707;
         }
 
-        /* Degradé lateral para ocultar slides lejanas */
         .carousel-edge {
             position: absolute;
             top: 0;
@@ -197,7 +209,6 @@
             z-index: 4;
         }
 
-        /* Flechas */
         .c-arrow {
             position: absolute;
             top: 50%;
@@ -241,7 +252,6 @@
             pointer-events: none;
         }
 
-        /* Contador */
         .c-counter {
             text-align: center;
             padding: 10px 0 4px;
@@ -251,7 +261,6 @@
             font-family: 'Bebas Neue', sans-serif;
         }
 
-        /* Dots */
         .c-dots {
             display: flex;
             justify-content: center;
@@ -276,7 +285,7 @@
             border-radius: 3px;
         }
 
-        /* ──────────── INFO PANEL ──────────── */
+        /* INFO PANEL */
         .info-panel {
             padding: 2rem 1.5rem;
             max-width: 680px;
@@ -284,11 +293,28 @@
             width: 100%;
         }
 
+        /* PRECIO + PROMO */
+        .price-block {
+            background: #0a0a0a;
+            border: 0.5px solid #1a1a1a;
+            border-radius: 4px;
+            padding: 16px;
+            margin-bottom: 1.5rem;
+        }
+
+        .price-normal {
+            font-size: 12px;
+            color: #444;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
         .price-row {
             display: flex;
             align-items: baseline;
             gap: 12px;
-            margin-bottom: 1.4rem;
+            margin-bottom: 10px;
         }
 
         .price {
@@ -305,6 +331,63 @@
             padding: 4px 10px;
             border-radius: 2px;
             text-transform: uppercase;
+        }
+
+        .promo-2x {
+            background: linear-gradient(135deg, #1c1500, #0f0f0f);
+            border: 0.5px solid #c8a96e;
+            border-radius: 3px;
+            padding: 12px 14px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .promo-2x-icon {
+            font-size: 20px;
+        }
+
+        .promo-2x-text {
+            flex: 1;
+        }
+
+        .promo-2x-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.1rem;
+            letter-spacing: 0.06em;
+            color: #c8a96e;
+        }
+
+        .promo-2x-desc {
+            font-size: 11px;
+            color: #666;
+            margin-top: 2px;
+            line-height: 1.4;
+        }
+
+        /* ENVÍO GRATIS */
+        .shipping-free {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #060f0a;
+            border: 0.5px solid #1a2e22;
+            border-radius: 3px;
+            padding: 10px 14px;
+            margin-bottom: 1.5rem;
+        }
+
+        .shipping-free-icon {
+            font-size: 18px;
+        }
+
+        .shipping-free-text {
+            font-size: 12px;
+            color: #4a9e6a;
+        }
+
+        .shipping-free-text strong {
+            color: #6abf88;
         }
 
         .urgency {
@@ -367,8 +450,9 @@
             font-weight: 500;
         }
 
+        /* TALLAS */
         .size-section {
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         .slabel {
@@ -383,6 +467,7 @@
             display: flex;
             gap: 8px;
             flex-wrap: wrap;
+            margin-bottom: 12px;
         }
 
         .sz {
@@ -403,6 +488,170 @@
             background: #fff;
             color: #000;
             border-color: #fff;
+        }
+
+        .size-guide-btn {
+            font-size: 11px;
+            color: #444;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            letter-spacing: 0.1em;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            padding: 0;
+            transition: color 0.2s;
+        }
+
+        .size-guide-btn:hover {
+            color: #888;
+        }
+
+        /* GUÍA DE TALLAS MODAL */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.92);
+            z-index: 500;
+            display: none;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        .modal-overlay.open {
+            display: flex;
+        }
+
+        .modal-box {
+            background: #0a0a0a;
+            border: 0.5px solid #222;
+            border-radius: 8px 8px 0 0;
+            width: 100%;
+            max-width: 700px;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 24px 20px 40px;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .modal-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.6rem;
+            letter-spacing: 0.06em;
+        }
+
+        .modal-close {
+            background: transparent;
+            border: 0.5px solid #222;
+            color: #666;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .modal-close:hover {
+            color: #fff;
+            border-color: #555;
+        }
+
+        .size-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        .size-table th {
+            font-size: 9px;
+            letter-spacing: 0.15em;
+            color: #444;
+            text-transform: uppercase;
+            padding: 10px 12px;
+            text-align: center;
+            border-bottom: 1px solid #111;
+        }
+
+        .size-table td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 0.5px solid #0f0f0f;
+            color: #888;
+        }
+
+        .size-table tr:hover td {
+            background: #0f0f0f;
+            color: #ccc;
+        }
+
+        .size-table td:first-child {
+            font-weight: 600;
+            color: #ccc;
+            font-size: 14px;
+        }
+
+        .size-note {
+            font-size: 11px;
+            color: #333;
+            margin-top: 14px;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        /* MEDIDAS VISUALES */
+        .measure-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .measure-card {
+            background: #060606;
+            border: 0.5px solid #141414;
+            border-radius: 3px;
+            padding: 14px;
+        }
+
+        .measure-card-title {
+            font-size: 9px;
+            letter-spacing: 0.2em;
+            color: #3a3a3a;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .measure-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 0;
+            border-bottom: 0.5px solid #0d0d0d;
+        }
+
+        .measure-row:last-child {
+            border-bottom: none;
+        }
+
+        .measure-label {
+            font-size: 11px;
+            color: #444;
+        }
+
+        .measure-value {
+            font-size: 12px;
+            color: #888;
+            font-weight: 500;
         }
 
         .cta-wrap {
@@ -432,6 +681,25 @@
 
         .btn-buy:active {
             transform: scale(0.985);
+        }
+
+        .btn-2x {
+            padding: 15px;
+            background: transparent;
+            color: #c8a96e;
+            border: 0.5px solid #c8a96e44;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 13px;
+            letter-spacing: 0.08em;
+            cursor: pointer;
+            transition: all 0.2s;
+            border-radius: 2px;
+            width: 100%;
+        }
+
+        .btn-2x:hover {
+            background: #c8a96e11;
+            border-color: #c8a96e;
         }
 
         .btn-wish {
@@ -521,7 +789,7 @@
             text-transform: uppercase;
         }
 
-        /* REVIEWS */
+        /* RESEÑAS — sección "sé el primero" */
         .rev-section {
             padding: 1.5rem 1.5rem 2rem;
             border-top: 0.5px solid #0f0f0f;
@@ -530,49 +798,29 @@
             width: 100%;
         }
 
-        .rev-header {
-            display: flex;
-            align-items: baseline;
-            gap: 12px;
-            margin-bottom: 1.4rem;
+        .rev-empty {
+            text-align: center;
+            padding: 2.5rem 1rem;
         }
 
-        .rev-stars-big {
-            color: #fff;
-            font-size: 17px;
-            letter-spacing: 3px;
+        .rev-empty-icon {
+            font-size: 2rem;
+            margin-bottom: 12px;
+            opacity: 0.3;
         }
 
-        .rev-count {
+        .rev-empty-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.4rem;
+            letter-spacing: 0.06em;
+            color: #2a2a2a;
+            margin-bottom: 6px;
+        }
+
+        .rev-empty-sub {
             font-size: 12px;
-            color: #333;
-        }
-
-        .rev-card {
-            background: #060606;
-            border: 0.5px solid #141414;
-            border-radius: 3px;
-            padding: 14px;
-            margin-bottom: 10px;
-        }
-
-        .rev-name {
-            font-size: 12px;
-            font-weight: 500;
-            color: #888;
-            margin-bottom: 4px;
-        }
-
-        .rev-text {
-            font-size: 13px;
-            color: #444;
-            line-height: 1.65;
-        }
-
-        .rev-stars {
-            color: #fff;
-            font-size: 11px;
-            margin-bottom: 5px;
+            color: #2a2a2a;
+            line-height: 1.6;
         }
 
         /* STICKY */
@@ -583,39 +831,77 @@
             right: 0;
             background: rgba(0, 0, 0, 0.97);
             border-top: 0.5px solid #141414;
-            padding: 14px 20px;
+            padding: 10px 20px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             backdrop-filter: blur(14px);
             z-index: 200;
+            gap: 10px;
+        }
+
+        .sticky-left {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
         }
 
         .sticky-price {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.75rem;
+            font-size: 1.6rem;
+            line-height: 1;
+        }
+
+        .sticky-ship {
+            font-size: 10px;
+            color: #4a9e6a;
+            letter-spacing: 0.1em;
+        }
+
+        .sticky-buttons {
+            display: flex;
+            gap: 8px;
         }
 
         .sticky-btn {
-            padding: 12px 30px;
+            padding: 11px 22px;
             background: #fff;
             color: #000;
             border: none;
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.05rem;
+            font-size: 1rem;
             letter-spacing: 0.1em;
             cursor: pointer;
             border-radius: 2px;
             transition: background 0.2s;
+            white-space: nowrap;
         }
 
         .sticky-btn:hover {
             background: #d8d8d8;
         }
 
+        .sticky-btn-2x {
+            padding: 11px 16px;
+            background: transparent;
+            color: #c8a96e;
+            border: 0.5px solid #c8a96e55;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            border-radius: 2px;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .sticky-btn-2x:hover {
+            background: #c8a96e11;
+        }
+
         .footer {
             text-align: center;
-            padding: 2.5rem 1rem 6rem;
+            padding: 2.5rem 1rem 8rem;
             border-top: 0.5px solid #0a0a0a;
         }
 
@@ -624,6 +910,28 @@
             letter-spacing: 0.18em;
             color: #1a1a1a;
             text-transform: uppercase;
+        }
+
+        /* TALLAS AGOTADAS */
+        .sz.disabled {
+            opacity: 0.4;
+            pointer-events: none;
+            position: relative;
+            background: #f0f0f0;
+            color: #999;
+        }
+
+        .sz.disabled::after {
+            content: "AGOTADO";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 8px;
+            color: #ff0000;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
         }
 
         @keyframes fadeUp {
@@ -676,90 +984,89 @@
         <div class="scroll-hint">↓ ver catálogo</div>
     </section>
 
-    <!-- ══════════════════════════════════════════
-     == IMÁGENES DEL CATÁLOGO ==
-     Para agregar más fotos, copiá este bloque:
-       <div class="cslide"><img src="NOMBRE_FOTO.jpg" alt="Descripción"></div>
-     y pegalo dentro del div #ctrack
-════════════════════════════════════════════ -->
+    <!-- PROMO BANNER TOP -->
+    <div class="promo-banner">
+        <div class="promo-main">🔥 PROMO: 2 HOODIES POR <span>$180.000</span></div>
+        <div class="promo-sub">Envío incluido en toda Colombia · Stock muy limitado</div>
+    </div>
+
+    <!-- CARRUSEL -->
     <div class="carousel-outer" id="carouselOuter">
-
         <div class="ctrack" id="ctrack">
-
-            <!-- FOTO 1 — Cambiá "hoodie.jpg" por el nombre de tu imagen -->
+            <!-- FOTO 1 — Reemplazá "hoodie.jpg" con tu imagen -->
             <div class="cslide" onclick="goTo(0)">
                 <img src="img/1.png" alt="Vista frontal"
                     onerror="this.style.cssText='width:100%;height:480px;background:#0a0a0a;display:block'">
             </div>
-
             <!-- FOTO 2 -->
             <div class="cslide" onclick="goTo(1)">
                 <img src="img/2.png" alt="Vista lateral"
                     onerror="this.style.cssText='width:100%;height:480px;background:#080808;display:block'">
             </div>
-
             <!-- FOTO 3 -->
             <div class="cslide" onclick="goTo(2)">
                 <img src="img/3.png" alt="Detalle manga"
                     onerror="this.style.cssText='width:100%;height:480px;background:#060606;display:block'">
             </div>
-
             <!-- FOTO 4 -->
             <div class="cslide" onclick="goTo(3)">
                 <img src="img/4.png" alt="Detalle pecho"
                     onerror="this.style.cssText='width:100%;height:480px;background:#080808;display:block'">
             </div>
-
-            <!--
+            <!-- FOTO 5 
             <div class="cslide" onclick="goTo(4)">
                 <img src="hoodie5.jpg" alt="Vista completa"
                     onerror="this.style.cssText='width:100%;height:480px;background:#060606;display:block'">
             </div>
             -->
-
-
             <!--
-    FOTO 6 (descomentá para activar):
+    Agregar más fotos:
     <div class="cslide" onclick="goTo(5)">
       <img src="hoodie6.jpg" alt="Vista 6">
     </div>
-
-    FOTO 7:
-    <div class="cslide" onclick="goTo(6)">
-      <img src="hoodie7.jpg" alt="Vista 7">
-    </div>
     -->
-
-        </div><!-- /ctrack -->
-
-        <!-- Flechas -->
+        </div>
         <button class="c-arrow prev" id="prevBtn" onclick="step(-1)">&#8592;</button>
         <button class="c-arrow next" id="nextBtn" onclick="step(1)">&#8594;</button>
-
-        <!-- Degradés laterales -->
         <div class="carousel-edge left"></div>
         <div class="carousel-edge right"></div>
         <div class="carousel-bottom-fade"></div>
-
-    </div><!-- /carousel-outer -->
-
-    <!-- Contador + dots -->
+    </div>
     <div class="c-counter" id="cCounter">01 / 05</div>
     <div class="c-dots" id="cDots"></div>
 
-    <!-- ──────────── INFO PANEL ──────────── -->
+    <!-- INFO PANEL -->
     <div class="info-panel">
 
-        <div class="price-row">
-            <div class="price">$100.000</div>
-            <div class="badge">Stock limitado</div>
+        <!-- PRECIO -->
+        <div class="price-block">
+            <div class="price-normal">Precio unitario</div>
+            <div class="price-row">
+                <div class="price">$100.000</div>
+                <div class="badge">Stock limitado</div>
+            </div>
+            <div class="promo-2x">
+                <div class="promo-2x-icon">🤝</div>
+                <div class="promo-2x-text">
+                    <div class="promo-2x-title">LLEVÁ 2 POR $180.000</div>
+                    <div class="promo-2x-desc">Ahorrás $10.000 · Podés combinar tallas · Envío incluido</div>
+                </div>
+            </div>
         </div>
 
+        <!-- ENVÍO GRATIS -->
+        <div class="shipping-free">
+            <div class="shipping-free-icon">🚚</div>
+            <div class="shipping-free-text"><strong>Envío gratis</strong> a toda Colombia incluido en tu compra</div>
+        </div>
+
+        <!-- URGENCIA -->
         <div class="urgency">
             <div class="udot"></div>
             <div class="utext"><strong>7 personas</strong> están viendo esto ahora mismo</div>
         </div>
 
+        <!-- CARACTERÍSTICAS -->
         <div class="features">
             <div class="feat"><span>Material</span><span>Algodón 380g premium</span></div>
             <div class="feat"><span>Corte</span><span>Oversize unisex</span></div>
@@ -767,27 +1074,33 @@
             <div class="feat"><span>Edición</span><span>Limitada — 30 uds</span></div>
         </div>
 
+        <!-- TALLAS -->
         <div class="size-section">
-            <div class="slabel">Seleccioná tu talla</div>
-            <div class="sizes">
-
-                <!-- <button class="sz" onclick="selectSize(this)">S</button> -->
+            <div class="slabel" style="display:flex;justify-content:space-between;align-items:center;">
+                <span>Seleccioná tu talla</span>
+                <button class="size-guide-btn" onclick="openModal()">📏 Guía de tallas</button>
+            </div>
+            <div class="sizes" style="margin-top:12px;">
+                <button class="sz disabled" onclick="selectSize(this)">S</button>
                 <button class="sz active" onclick="selectSize(this)">M</button>
                 <button class="sz" onclick="selectSize(this)">L</button>
                 <button class="sz" onclick="selectSize(this)">XL</button>
-                <!-- <button class="sz" onclick="selectSize(this)">XXL</button> -->
+                <button class="sz disabled" onclick="selectSize(this)">XXL</button>
             </div>
         </div>
 
+        <!-- CTA -->
         <div class="cta-wrap">
-            <button class="btn-buy" onclick="buyNow()">COMPRAR AHORA</button>
+            <button class="btn-buy" onclick="buyNow()">COMPRAR AHORA — ENVÍO GRATIS 🚚</button>
+            <button class="btn-2x" onclick="buyPromo()">🔥 &nbsp;LLEVÁ 2 POR $180.000</button>
             <button class="btn-wish" id="wishBtn" onclick="toggleWish()">♡ &nbsp;AGREGAR A FAVORITOS</button>
         </div>
 
+        <!-- CONFIANZA -->
         <div class="trust-row">
             <div class="ti">
                 <div class="ti-icon">🚚</div>
-                <div class="ti-text">Envío a todo<br>Colombia</div>
+                <div class="ti-text">Envío<br>incluido</div>
             </div>
             <div class="ti">
                 <div class="ti-icon">🔒</div>
@@ -803,6 +1116,7 @@
             </div>
         </div>
 
+        <!-- DESCRIPCIÓN -->
         <div class="desc-block">
             <div class="desc-title">La prenda que para el scroll</div>
             <div class="desc-body">
@@ -810,8 +1124,7 @@
                     desde otro lugar. Gráficas de dark art metálico cubren mangas, pecho y capucha, creando una pieza
                     que es imposible ignorar.</p>
                 <p>Confeccionado en algodón de 380 gramos, su peso se siente desde el primer contacto. El corte oversize
-                    permite llevarlo solo o sobre capas, para cualquier estación. Cada detalle fue diseñado con
-                    intención.</p>
+                    permite llevarlo solo o sobre capas, para cualquier estación.</p>
                 <p style="color:#333;">Perfecto para conciertos, salidas nocturnas o simplemente dominar cualquier
                     ambiente.</p>
             </div>
@@ -826,29 +1139,15 @@
 
     </div>
 
-    <!-- REVIEWS -->
+    <!-- RESEÑAS — vacías y honestas -->
     <div class="rev-section">
-        <div class="rev-header">
-            <div class="rev-stars-big">★★★★★</div>
-            <div class="rev-count">4.9 / 5 — 38 reseñas</div>
-        </div>
-        <div class="rev-card">
-            <div class="rev-stars">★★★★★</div>
-            <div class="rev-name">Juan M. — Bogotá</div>
-            <div class="rev-text">"La calidad es increíble, la tela pesa bastante bien y el diseño en persona es brutal.
-                La gente me para en la calle a preguntar dónde la conseguí."</div>
-        </div>
-        <div class="rev-card">
-            <div class="rev-stars">★★★★★</div>
-            <div class="rev-name">Valentina R. — Medellín</div>
-            <div class="rev-text">"Llegó en 3 días, packaging increíble y el hoodie es justo lo que esperaba. Se nota
-                que es edición limitada de verdad."</div>
-        </div>
-        <div class="rev-card">
-            <div class="rev-stars">★★★★☆</div>
-            <div class="rev-name">Sergio L. — Cali</div>
-            <div class="rev-text">"Talla exacta para oversize, me tomé la M y queda perfecto. El diseño es único, no he
-                visto nada igual en el mercado local."</div>
+        <div style="font-size:9px;letter-spacing:0.2em;color:#2a2a2a;text-transform:uppercase;margin-bottom:16px;">
+            Reseñas de clientes</div>
+        <div class="rev-empty">
+            <div class="rev-empty-icon">💬</div>
+            <div class="rev-empty-title">Sé el primero en opinar</div>
+            <div class="rev-empty-sub">Las reseñas de nuestros clientes aparecerán aquí.<br>Tu experiencia importa.
+            </div>
         </div>
     </div>
 
@@ -856,9 +1155,155 @@
         <p>Shadow Entity © 2025 — Dark Art Collection</p>
     </div>
 
+    <!-- STICKY BAR -->
     <div class="sticky-bar">
-        <div class="sticky-price">$100.000</div>
-        <button class="sticky-btn" onclick="buyNow()">COMPRAR →</button>
+        <div class="sticky-left">
+            <div class="sticky-price">$100.000</div>
+            <div class="sticky-ship">🚚 Envío gratis</div>
+        </div>
+        <div class="sticky-buttons">
+            <button class="sticky-btn-2x" onclick="buyPromo()">2×$180K 🔥</button>
+            <button class="sticky-btn" onclick="buyNow()">COMPRAR →</button>
+        </div>
+    </div>
+
+    <!-- ══════════ MODAL GUÍA DE TALLAS ══════════ -->
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+        <div class="modal-box">
+            <div class="modal-header">
+                <div class="modal-title">Guía de Tallas</div>
+                <button class="modal-close" onclick="closeModal()">✕</button>
+            </div>
+
+            <!-- TABLA COMPLETA -->
+            <table class="size-table">
+                <thead>
+                    <tr>
+                        <th>Talla</th>
+                        <th>Pecho corporal (cm)</th>
+                        <th>Cintura corporal (cm)</th>
+                        <th>Estatura (cm)</th>
+                        <th>Ancho prenda (cm)</th>
+                        <th>Largo prenda (cm)</th>
+                        <th>Busto prenda (cm)</th>
+                        <th>Manga (cm)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>S</td>
+                        <td>88–92</td>
+                        <td>74–78</td>
+                        <td>165–170</td>
+                        <td>57.5</td>
+                        <td>66</td>
+                        <td>115</td>
+                        <td>70</td>
+                    </tr>
+                    <tr>
+                        <td>M</td>
+                        <td>96–100</td>
+                        <td>82–86</td>
+                        <td>175–180</td>
+                        <td>60</td>
+                        <td>68</td>
+                        <td>120</td>
+                        <td>72</td>
+                    </tr>
+                    <tr>
+                        <td>L</td>
+                        <td>100–105</td>
+                        <td>86–91</td>
+                        <td>180–185</td>
+                        <td>62.5</td>
+                        <td>69</td>
+                        <td>125</td>
+                        <td>74</td>
+                    </tr>
+                    <tr>
+                        <td>XL</td>
+                        <td>105–110</td>
+                        <td>91–96</td>
+                        <td>185–190</td>
+                        <td>65</td>
+                        <td>70</td>
+                        <td>130</td>
+                        <td>76</td>
+                    </tr>
+                    <tr>
+                        <td>XXL</td>
+                        <td>110–116</td>
+                        <td>96–102</td>
+                        <td>190–195</td>
+                        <td>68</td>
+                        <td>72</td>
+                        <td>136</td>
+                        <td>78</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p class="size-note">
+                📏 Las medidas del cuerpo son las de <strong>tu cuerpo</strong>, no de la prenda.<br>
+                Este hoodie tiene corte <strong>oversize</strong> — si querés un fit más ajustado bajá una talla.<br>
+                Todas las medidas en centímetros (cm).
+            </p>
+
+            <div style="margin-top:20px;">
+                <div style="font-size:9px;letter-spacing:0.2em;color:#333;text-transform:uppercase;margin-bottom:12px;">
+                    Medidas de la prenda por talla</div>
+                <div class="measure-grid">
+                    <div class="measure-card">
+                        <div class="measure-card-title">Talla M</div>
+                        <div class="measure-row"><span class="measure-label">Ancho hombros</span><span
+                                class="measure-value">60 cm</span></div>
+                        <div class="measure-row"><span class="measure-label">Manga</span><span class="measure-value">72
+                                cm</span></div>
+                        <div class="measure-row"><span class="measure-label">Largo prenda</span><span
+                                class="measure-value">68 cm</span></div>
+                        <div class="measure-row"><span class="measure-label">Busto</span><span class="measure-value">120
+                                cm</span></div>
+                    </div>
+                    <div class="measure-card">
+                        <div class="measure-card-title">Talla L</div>
+                        <div class="measure-row"><span class="measure-label">Ancho hombros</span><span
+                                class="measure-value">62.5 cm</span></div>
+                        <div class="measure-row"><span class="measure-label">Manga</span><span class="measure-value">74
+                                cm</span></div>
+                        <div class="measure-row"><span class="measure-label">Largo prenda</span><span
+                                class="measure-value">69 cm</span></div>
+                        <div class="measure-row"><span class="measure-label">Busto</span><span class="measure-value">125
+                                cm</span></div>
+                    </div>
+                    <div class="measure-card">
+                        <div class="measure-card-title">Talla XL</div>
+                        <div class="measure-row"><span class="measure-label">Ancho hombros</span><span
+                                class="measure-value">65 cm</span></div>
+                        <div class="measure-row"><span class="measure-label">Manga</span><span class="measure-value">76
+                                cm</span></div>
+                        <div class="measure-row"><span class="measure-label">Largo prenda</span><span
+                                class="measure-value">70 cm</span></div>
+                        <div class="measure-row"><span class="measure-label">Busto</span><span class="measure-value">130
+                                cm</span></div>
+                    </div>
+                    <div class="measure-card">
+                        <div class="measure-card-title">Talla XXL</div>
+                        <div class="measure-row"><span class="measure-label">Ancho hombros</span><span
+                                class="measure-value">68 cm</span></div>
+                        <div class="measure-row"><span class="measure-label">Manga</span><span class="measure-value">78
+                                cm</span></div>
+                        <div class="measure-row"><span class="measure-label">Largo prenda</span><span
+                                class="measure-value">72 cm</span></div>
+                        <div class="measure-row"><span class="measure-label">Busto</span><span class="measure-value">136
+                                cm</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <button onclick="closeModal()" style="width:100%;padding:14px;background:#fff;color:#000;border:none;
+      font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:0.1em;
+      cursor:pointer;border-radius:2px;margin-top:20px;">CERRAR</button>
+        </div>
     </div>
 
     <script>
@@ -868,82 +1313,52 @@
         const counter = document.getElementById('cCounter');
         const prevBtn = document.getElementById('prevBtn');
         const nextBtn = document.getElementById('nextBtn');
-
-        let slides = [];
-        let cur = 0;
+        let slides = [], cur = 0;
 
         function init() {
             slides = Array.from(track.querySelectorAll('.cslide'));
-            const n = slides.length;
-
-            // Crear dots
             dotsWrap.innerHTML = '';
             slides.forEach((_, i) => {
                 const d = document.createElement('button');
-                d.className = 'cdot';
-                d.onclick = () => goTo(i);
+                d.className = 'cdot'; d.onclick = () => goTo(i);
                 dotsWrap.appendChild(d);
             });
-
             render();
         }
 
         function render() {
             const n = slides.length;
-
             slides.forEach((s, i) => {
                 s.classList.remove('active', 'near');
-                const dist = Math.abs(i - cur);
-                if (dist === 0) s.classList.add('active');
-                else if (dist === 1) s.classList.add('near');
-                // los más lejanos quedan con el estilo por defecto (blur máximo)
+                const d = Math.abs(i - cur);
+                if (d === 0) s.classList.add('active');
+                else if (d === 1) s.classList.add('near');
             });
-
-            // mover track: centramos el slide activo
-            const slideW = slides[0].offsetWidth;
-            const slideMargin = parseFloat(getComputedStyle(slides[0]).marginLeft) +
-                parseFloat(getComputedStyle(slides[0]).marginRight);
-            const totalW = slideW + slideMargin;
-            const outerW = document.getElementById('carouselOuter').offsetWidth;
-            const offset = cur * totalW - (outerW / 2) + (slideW / 2);
-            track.style.transform = 'translateX(' + (-offset) + 'px)';
-
-            // dots
-            document.querySelectorAll('.cdot').forEach((d, i) =>
-                d.classList.toggle('active', i === cur));
-
-            // contador
-            counter.textContent =
-                String(cur + 1).padStart(2, '0') + ' / ' + String(n).padStart(2, '0');
-
-            // flechas
+            const sw = slides[0].offsetWidth;
+            const sm = parseFloat(getComputedStyle(slides[0]).marginLeft) + parseFloat(getComputedStyle(slides[0]).marginRight);
+            const ow = document.getElementById('carouselOuter').offsetWidth;
+            track.style.transform = 'translateX(' + (-cur * (sw + sm) + (ow / 2 - sw / 2)) + 'px)';
+            document.querySelectorAll('.cdot').forEach((d, i) => d.classList.toggle('active', i === cur));
+            counter.textContent = String(cur + 1).padStart(2, '0') + ' / ' + String(n).padStart(2, '0');
             prevBtn.classList.toggle('disabled', cur === 0);
             nextBtn.classList.toggle('disabled', cur === n - 1);
         }
 
-        function goTo(i) {
-            const n = slides.length;
-            cur = Math.max(0, Math.min(n - 1, i));
-            render();
-        }
+        function goTo(i) { cur = Math.max(0, Math.min(slides.length - 1, i)); render(); }
+        function step(d) { goTo(cur + d); }
 
-        function step(dir) { goTo(cur + dir); }
-
-        // Swipe táctil
-        let touchStartX = 0;
-        track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+        let tx = 0;
+        track.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
         track.addEventListener('touchend', e => {
-            const diff = touchStartX - e.changedTouches[0].clientX;
+            const diff = tx - e.changedTouches[0].clientX;
             if (Math.abs(diff) > 40) step(diff > 0 ? 1 : -1);
         }, { passive: true });
-
-        // Re-renderizar al cambiar tamaño de ventana
         window.addEventListener('resize', render);
-
         init();
 
         /* ═══ TALLAS ═══ */
         function selectSize(el) {
+            if (el.classList.contains('disabled')) return;
             document.querySelectorAll('.sz').forEach(b => b.classList.remove('active'));
             el.classList.add('active');
         }
@@ -951,22 +1366,33 @@
         /* ═══ COMPRAR ═══ */
         function buyNow() {
             const size = document.querySelector('.sz.active')?.textContent || 'M';
-            window.open(
-                'https://wa.me/573217597054?text=Hola! Quiero reservar mi *Shadow Entity Hoodie — Edición Limitada* en talla *'
-                + size +
-                '*. ¿Cuáles son los métodos de pago y el tiempo de entrega?'
-            );
+            window.open('https://wa.me/573217597054?text=Hola! 🖤 Quiero reservar mi *Shadow Entity Hoodie — Edición Limitada* en talla *' + size + '*. ¿Cuáles son los métodos de pago y el tiempo de entrega?');
         }
 
-
+        function buyPromo() {
+            const size = document.querySelector('.sz.active')?.textContent || 'M';
+            window.open('https://wa.me/573217597054?text=Hola! 🔥 Quiero aprovechar la promo *2 Hoodies por $180.000*. Una de las tallas es *' + size + '*. ¿Me confirmás disponibilidad y cómo coordinar el pago?');
+        }
 
         /* ═══ FAVORITOS ═══ */
         function toggleWish() {
             const btn = document.getElementById('wishBtn');
             btn.classList.toggle('active');
             btn.innerHTML = btn.classList.contains('active')
-                ? '♥ &nbsp;EN FAVORITOS'
-                : '♡ &nbsp;AGREGAR A FAVORITOS';
+                ? '♥ &nbsp;EN FAVORITOS' : '♡ &nbsp;AGREGAR A FAVORITOS';
+        }
+
+        /* ═══ MODAL TALLAS ═══ */
+        function openModal() {
+            document.getElementById('modalOverlay').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal() {
+            document.getElementById('modalOverlay').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        function closeModalOutside(e) {
+            if (e.target === document.getElementById('modalOverlay')) closeModal();
         }
     </script>
 </body>
